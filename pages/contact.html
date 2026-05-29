@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contacto y Cotización | Ecuatour Travel</title>
+  <meta name="description" content="Cotiza tu viaje o crucero con Ecuatour Travel. Pagos por transferencia o PayPal." />
+
+  <link rel="icon" href="../assets/icons/favicon.ico" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/layout.css" />
+  <link rel="stylesheet" href="../assets/css/components.css" />
+  <link rel="stylesheet" href="../assets/css/responsive.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="../index.html" aria-label="Ir al inicio">
+        <span class="brand__name">Ecuatour Travel</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">☰</button>
+        <ul class="nav__menu" id="navMenu">
+          <li><a class="nav__link" href="../index.html">Inicio</a></li>
+          <li><a class="nav__link" href="services.html">Servicios</a></li>
+          <li><a class="nav__link" href="cruises.html">Galápagos</a></li>
+          <li><a class="nav__link" href="about.html">Sobre mí</a></li>
+          <li><a class="nav__link is-active" href="contact.html">Contact us</a></li>
+          <li class="nav__cta"><a class="btn btn--accent" href="#cotizar">Cotizar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SIMPLE -->
+    <section class="page-hero">
+      <div class="container page-hero__row">
+        <div>
+          <p class="badge">Respuesta rápida • Emisivo • Receptivo • Cruceros</p>
+          <h1>Contacto y Cotización</h1>
+          <p class="lead">
+            Envíanos tu destino, fechas y número de viajeros.
+            Te respondemos por WhatsApp o correo.
+          </p>
+
+          <div class="actions">
+            <a class="btn btn--accent" href="#cotizar">Cotizar ahora</a>
+            <a class="btn btn--ghost" target="_blank" rel="noopener"
+                href="https://wa.me/593988557225?text=Hola%20Ecuatour%20Travel%2C%20quiero%20cotizar%20un%20viaje.">
+              WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <aside class="info-card">
+          <h2 class="info-card__title">Canales de atención</h2>
+          <ul class="info-list">
+            <li><strong>WhatsApp:</strong> +593 988557225</li>
+            <li><strong>Email:</strong> Correo: sales@agecuatourstravel.com</li>
+            <li><strong>Horario:</strong> Lun–Sáb 09:00–18:00</li>
+          </ul>
+          <p class="muted">
+            *Para pagos y confirmación, revisa la sección “Métodos de pago”.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- CONTENIDO EN 2 COLUMNAS -->
+    <section class="section" id="cotizar">
+      <div class="container two-col">
+        <!-- FORM -->
+        <div>
+          <div class="section__head">
+            <h2>Formulario de cotización</h2>
+            <p>Completa lo básico y te respondemos lo más rápido posible.</p>
+          </div>
+
+          <!-- Explicación rápida:
+                - data-form="quote" se usa en JS para capturar el submit sin recargar
+                - required valida en navegador (y en JS agregamos validación extra) -->
+          <form class="form card" data-form="quote" novalidate>
+            <div class="grid-2">
+              <div class="field">
+                <label for="name">Nombre y apellido</label>
+                <input id="name" name="name" type="text" placeholder="Ej: Carlos Simbaña" required />
+                <small class="field__error" data-error-for="name"></small>
+              </div>
+
+              <div class="field">
+                <label for="phone">WhatsApp</label>
+                <input id="phone" name="phone" type="tel" placeholder="+593..." required />
+                <small class="field__error" data-error-for="phone"></small>
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div class="field">
+                <label for="email">Correo</label>
+                <input id="email" name="email" type="email" placeholder="correo@ejemplo.com" required />
+                <small class="field__error" data-error-for="email"></small>
+              </div>
+
+              <div class="field">
+                <label for="type">Tipo de viaje</label>
+                <select id="type" name="type" required>
+                  <option value="" selected disabled>Selecciona</option>
+                  <option value="emisivo">Emisivo (viajes al exterior)</option>
+                  <option value="receptivo">Receptivo (viajes en Ecuador)</option>
+                  <option value="crucero">Crucero</option>
+                </select>
+                <small class="field__error" data-error-for="type"></small>
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div class="field">
+                <label for="destination">Destino / Ruta</label>
+                <input id="destination" name="destination" type="text" placeholder="Ej: Caribe / Galápagos / Europa" required />
+                <small class="field__error" data-error-for="destination"></small>
+              </div>
+
+              <div class="field">
+                <label for="travelers">Número de viajeros</label>
+                <input id="travelers" name="travelers" type="number" min="1" placeholder="Ej: 2" required />
+                <small class="field__error" data-error-for="travelers"></small>
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div class="field">
+                <label for="dateFrom">Fecha (desde)</label>
+                <input id="dateFrom" name="dateFrom" type="date" required />
+                <small class="field__error" data-error-for="dateFrom"></small>
+              </div>
+
+              <div class="field">
+                <label for="dateTo">Fecha (hasta)</label>
+                <input id="dateTo" name="dateTo" type="date" />
+                <small class="muted">Opcional</small>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="notes">Notas (presupuesto, hotel, intereses, etc.)</label>
+              <textarea id="notes" name="notes" rows="4" placeholder="Ej: preferimos hotel 4*, vuelos incluidos, etc."></textarea>
+            </div>
+
+            <div class="form__actions">
+              <button class="btn btn--accent" type="submit">Enviar cotización</button>
+              <button class="btn btn--primary" type="button" data-send-whatsapp>
+                Enviar por WhatsApp
+              </button>
+            </div>
+
+            <p class="muted">
+              Al enviar, aceptas que te contactemos para completar detalles y confirmar disponibilidad.
+            </p>
+
+            <div class="toast" role="status" aria-live="polite" data-toast hidden></div>
+          </form>
+        </div>
+
+        <!-- PAGOS + CHATBOT -->
+        <aside>
+          <div class="section__head">
+            <h2>Métodos de pago</h2>
+            <p>Confirmamos tu reserva una vez validado el pago.</p>
+          </div>
+
+          <div class="stack">
+            <article class="card">
+              <h3>Transferencia bancaria</h3>
+              <p class="muted">
+                Realiza la transferencia y envía el comprobante por WhatsApp o correo.
+              </p>
+
+              <div class="pay-box">
+                <div class="pay-row"><span>Banco:</span><strong>Banco Ejemplo</strong></div>
+                <div class="pay-row"><span>Titular:</span><strong>Galaxy Tours</strong></div>
+                <div class="pay-row"><span>Cuenta:</span><strong>1234567890</strong></div>
+                <div class="pay-row"><span>Tipo:</span><strong>Ahorros</strong></div>
+              </div>
+
+              <a class="btn btn--ghost" target="_blank" rel="noopener"
+                  href="https://wa.me/593000000000?text=Hola%20Galaxy%20Tours%2C%20adjunto%20mi%20comprobante%20de%20transferencia.">
+                Enviar comprobante por WhatsApp
+              </a>
+            </article>
+
+            <article class="card">
+              <h3>PayPal</h3>
+              <p class="muted">
+                Pagos internacionales con PayPal. (Puedes usar un link de pago o PayPal.me)
+              </p>
+
+              <!-- Aquí luego pones tu link real -->
+              <a class="btn btn--primary" target="_blank" rel="noopener"
+                  href="https://www.paypal.com/">
+                Pagar con PayPal
+              </a>
+
+              <p class="muted" style="margin-top:10px;">
+                *Si el monto es variable por cotización, te enviaremos el link exacto.
+              </p>
+            </article>
+
+            <article class="card" id="chatbot">
+              <h3>Chatbot (FAQ rápido)</h3>
+              <p class="muted">
+                Respuestas inmediatas a preguntas comunes. Si necesitas asesor, te pasamos a WhatsApp.
+              </p>
+
+              <!-- Contenedor del chatbot -->
+              <div class="chat">
+                <div class="chat__log" data-chat-log></div>
+
+                <div class="chat__actions">
+                  <button class="chip" data-quick="¿Tienen cruceros disponibles?">Cruceros</button>
+                  <button class="chip" data-quick="¿Cómo pago por PayPal?">PayPal</button>
+                  <button class="chip" data-quick="¿Qué necesito para cotizar?">Cotizar</button>
+                </div>
+
+                <form class="chat__form" data-chat-form>
+                  <input class="chat__input" name="message" type="text" placeholder="Escribe tu pregunta..." autocomplete="off" />
+                  <button class="btn btn--accent" type="submit">Enviar</button>
+                </form>
+              </div>
+            </article>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>
+        <strong>Gaby Tours</strong>
+        <p class="muted">Viajes emisivos, receptivos y cruceros.</p>
+      </div>
+      <div class="footer-links">
+        <a href="services.html">Ecuador Mainland</a>
+        <a href="cruises.html">Cruceros</a>
+        <a href="about.html">About us</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <small>© <span id="year"></span> Gaby Tours. Todos los derechos reservados.</small>
+    </div>
+  </footer>
+
+  <a class="fab" target="_blank" rel="noopener"
+     href="https://wa.me/593000000000?text=Hola%20Galaxy%20Tours%2C%20quiero%20cotizar%20un%20viaje."
+     aria-label="Abrir WhatsApp">
+    WA
+  </a>
+
+  <script type="module" src="../assets/js/utils.js"></script>
+  <script type="module" src="../assets/js/navbar.js"></script>
+  <script type="module" src="../assets/js/chatbot.js"></script>
+  <script type="module" src="../assets/js/form.js"></script>
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>

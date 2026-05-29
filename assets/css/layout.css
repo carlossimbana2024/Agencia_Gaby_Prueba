@@ -1,0 +1,339 @@
+/* =========================
+   layout.css (layout)
+   header, hero, footer, sections
+   ========================= */
+
+/* HEADER */
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(12px);
+  background: var(--bg); /* hueso */
+  border-bottom: 1px solid rgba(20,33,61,.14);
+}
+
+.site-header .nav__link,
+.site-header .nav__toggle {
+  color: var(--navy);
+}
+
+.nav__link:hover {
+  background: rgba(20,33,61,.08);
+  border-color: rgba(20,33,61,.16);
+}
+
+.nav__link.is-active {
+  background: rgba(252,163,17,.14);
+  border-color: rgba(252,163,17,.34);
+  color: var(--navy);
+}
+
+.nav__toggle{
+  border-color: rgba(20,33,61,.2);
+  background: rgba(20,33,61,.08);
+}
+
+.header-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 16px;
+  padding: 14px 0;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+}
+.brand__name{
+  font-weight: 900;
+  letter-spacing: .14em;
+  font-size: 14px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+}
+
+.brand__logo{
+  height: 80px;
+  width: auto;
+  display: block;
+}
+
+.brand__name{
+  font-weight: 900;
+  letter-spacing: .14em;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+
+/* NAV */
+.nav{ position: relative; }
+
+.nav__toggle{
+  display:none;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  cursor:pointer;
+}
+
+.nav__menu{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+}
+
+.nav__link{
+  display:inline-flex;
+  align-items:center;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: var(--navy);
+  border: 1px solid transparent;
+}
+
+.nav__link:hover{
+  background: rgba(20,33,61,.12);
+  border-color: rgba(20,33,61,.24);
+  color: var(--gold);
+}
+
+.nav__link.is-active{
+  background: rgba(252,163,17,.16);
+  border-color: rgba(252,163,17,.34);
+  color: var(--navy);
+}
+
+.nav__cta{ margin-left: 4px; }
+
+/* =========================================================
+   HERO (Index)
+   - soporte para imagen (hero__media) y video (hero--video)
+   ========================================================= */
+
+.hero{
+  position:relative;
+  min-height: 92vh;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  border-bottom: 1px solid rgba(20,33,61,.16);
+}
+
+/* Hero con imagen (si lo usas en otras páginas) */
+.hero__media{
+  position:absolute;
+  inset:0;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(1.05) contrast(1.05);
+  transform: scale(1.02);
+}
+
+/* Hero con VIDEO */
+.hero--video{
+  min-height: 92vh;
+}
+.hero__video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  filter: saturate(1.05) contrast(1.05);
+}
+
+/* Overlay profesional (marino + toque dorado) */
+.hero__overlay{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg, rgba(20,33,61,.78) 0%, rgba(20,33,61,.52) 45%, rgba(15,26,48,.9) 100%),
+    radial-gradient(900px 520px at 50% 35%, rgba(252,163,17,.2), transparent 60%);
+}
+
+/* Contenido hero */
+.hero__content{
+  position:relative;
+  padding: 92px 0 70px;
+  color: var(--bone);
+}
+
+.hero__content h1,
+.hero__content p{
+  color: var(--bone);
+}
+
+.hero .badge{
+  color: var(--bone);
+  background: rgba(255,255,255,.08);
+  border-color: rgba(252,163,17,.6);
+}
+
+/* Centrado (para el home con video) */
+.hero__content--center{
+  text-align:center;
+  display:grid;
+  justify-items:center;
+}
+
+.hero__subtitle{
+  max-width: 68ch;
+  color: rgba(255,255,255,.86);
+  font-size: 1.08rem;
+}
+
+.hero__actions{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.hero__highlights{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.brand-gold{
+  color: var(--accent-2);
+  text-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+/* Page hero (internas) */
+.page-hero{
+  padding: 90px 0 40px; /* más aire */
+}
+.page-hero__row{
+  display:grid;
+  grid-template-columns: 1.3fr .7fr;
+  gap: 18px;
+  align-items: start;
+}
+
+/* Two col in contact/about */
+.two-col{
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 18px;
+  align-items: start;
+}
+
+/* =========================================================
+   FOOTER PRO (para el footer nuevo)
+   ========================================================= */
+
+.site-footer{
+  background: var(--navy);
+  color: var(--bone);
+  margin-top: 40px;
+  /* remove dark overlay; keep navy solid */
+  border-top: 1px solid rgba(255,255,255,.14);
+  padding: 44px 0 18px;
+}
+
+.site-footer .muted{
+  color: rgba(255,255,255,.82);
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns: 1.4fr .8fr .8fr;
+  gap: 22px;
+  align-items:start;
+}
+
+.footer-logo{
+  letter-spacing: .14em;
+  font-weight: 900;
+}
+
+.footer-title{
+  margin: 0 0 10px;
+  font-size: 13px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--bone);
+}
+
+.footer-link{
+  display:block;
+  padding: 10px 0;
+  color: var(--bone);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.footer-link:hover{
+  color: var(--gold);
+}
+
+.footer-text{
+  margin: 0 0 8px;
+  color: rgba(255,255,255,.86);
+}
+
+.footer-badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.pill{
+  display:inline-flex;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(252,163,17,.36);
+  background: rgba(252,163,17,.12);
+  color: rgba(245,241,232,.92);
+  font-size: 12px;
+}
+
+.footer-cta{
+  margin-top: 10px;
+  width: fit-content;
+}
+
+.footer-bottom{
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  color: rgba(255,255,255,.78);
+}
+
+/* CTA section */
+.cta{
+  padding: 64px 0;
+}
+.cta__box{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 18px;
+  padding: 26px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255,255,255,.12);
+
+  /* CTA profesional: navy + glow dorado */
+  background:
+    linear-gradient(135deg, rgba(20,33,61,.58), rgba(15,26,48,.7)),
+    radial-gradient(900px 480px at 30% 30%, rgba(252,163,17,.18), transparent 65%);
+
+  box-shadow: var(--shadow);
+}
+.cta__actions{
+  display:flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
